@@ -1,0 +1,120 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background-color: #EAEAEA;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 1000px;
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 25px;
+}
+
+.container h3 {
+    font-size: 18px;
+    color: #111111;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.line-break {
+    border: 1px solid #cfcfcf;;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.container h1 {
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.container h1:before {
+    content: '';
+    display: inline-block;
+    width: 50px; 
+    height: 3px;
+    background-color: #000;
+    margin-right: 10px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.testimonial-img {
+    width: auto;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.grid-item-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid-item-text h4 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.grid-item-text p {
+    font-size: 10px;
+    font-weight: 400;
+    color: #878789;
+}

@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Raleway', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #EAEAEA;
   }
   img, picture, video, canvas, svg {
@@ -68,7 +68,7 @@
 .container h1:before {
     content: '';
     display: inline-block;
-    width: 50px; 
+    width: 40px; 
     height: 3px;
     background-color: #000;
     margin-right: 10px;
@@ -76,20 +76,22 @@
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     width: 100%;
+    height: 300px;
 }
 
 .grid-item {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: 100%;
 }
 
 .testimonial-img {
     width: auto;
-    height: 350px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +108,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 8px;
 }
 
 .grid-item-text h4 {
@@ -117,4 +120,120 @@
     font-size: 10px;
     font-weight: 400;
     color: #878789;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    perspective: 2000px; /* Enables 3D flipping */
+    position: relative;
+    overflow: hidden;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back when not visible */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card-front {
+    background-color: white; /* Or use your testimonial image */
+    z-index: 2;
+}
+
+.card-back {
+    background-color: #7B9773; /* Light background for card back */
+    transform: rotateY(180deg); /* Initially hidden */
+    display: flex;
+    justify-content: start;
+    /* align-items: center; */
+    flex-direction: column;
+    padding: 20px;
+    /* text-align: center; */
+    color: white;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.card:hover .card-front {
+    transform: rotateY(180deg); /* Flip to back */
+}
+
+.card:hover .card-back {
+    transform: rotateY(360deg); /* Flip to front */
+}
+
+
+/* back card style */
+.rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating img {
+    width: 20px;
+    height: 20px;
+}
+
+.stars {
+    display: flex;
+    gap: 4px;
+}
+
+.stars i {
+    color: #FFFFFF; /* White stars */
+    font-size: 18px;
+    font-style: normal; /* Ensures the stars are not italicized */
+}
+  
+
+.review {
+    text-align: left;
+    margin-bottom: auto;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+ .profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-text {
+    line-height: 1.2;
+}
+
+
+.profile-text h3 {
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+}
+
+.profile-text p {
+    font-size: 9px;
+    margin: 0;
+    opacity: 0.8;
 }
